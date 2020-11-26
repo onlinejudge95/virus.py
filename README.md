@@ -26,3 +26,15 @@ you can try to attempt various activities including but not limited to.
 1. Causing a fork bomb(though remember that a single instance of a fork bomb is enough to bring donw a system, but given the nature of this code, it will cause a massive threaded fork bomb {don't even know if that is a thing :p })
 2. Causing a disk exhaustion by writing enormous amount of data to a file.
 3. Add the machine in a botnet.
+
+### Algorithm
+```
+1. Iterate over the lines of the current file.
+2. Store all the lines between the `BEGIN HEADER` & `END HEADER` sections.
+3. Iterate over all python files(recursively) in the given directory.
+4. If the file contains the replication code do nothing
+5. Else add the replication code to the file.
+```
+
+## TODOs
+1. Obfuscate the code.
